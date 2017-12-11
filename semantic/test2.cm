@@ -1,0 +1,18 @@
+int x[20];
+
+int test(int a[], int x)
+{
+	int y;
+	y = x + 3;
+	return y;
+}
+
+void main(void) 
+{
+	int a;
+	int b;
+	int y[10];
+	a = 10;
+
+	y[test(y,4)] = a;
+}

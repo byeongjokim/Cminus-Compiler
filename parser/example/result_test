@@ -1,0 +1,57 @@
+
+CMINUS COMPILATION: test.cm
+
+Syntax tree:
+  Function declaration, name: gcd, return type: int
+    single Parameter, name: u, type: int
+    single Parameter, name: v, type: int
+    Compound statement :
+      If (condition) (body)
+        Op: ==
+          Id: v
+          Const: 0
+        Return
+          Id: u
+      If (condition) (body) (else)
+        Op: <
+          Id: v
+          Const: 0
+        Return
+          Id: u
+        Return
+          Call, name: gcd, with arguments below
+            Id: v
+            Op: -
+              Id: u
+              Op: *
+                Op: /
+                  Id: u
+                  Id: v
+                Id: v
+  Function declaration, name: main, return type: void
+    array Param, name: a, type: int[] , size: 0
+    Compound statement :
+      Var declaration, name: x, type: int
+      Var declaration, name: y, type: int
+      Var declaration, name: z, type: int
+      Var declaration, name: sample, type: int[], size: 35
+      Assign :(destination) (source)
+        Id: x
+        Call, name: input, with arguments below
+      Assign :(destination) (source)
+        Id: y
+        Call, name: input, with arguments below
+      If (condition) (body)
+        Op: <
+          Id: x
+          Const: 0
+        Assign :(destination) (source)
+          Id: x
+          Const: 0
+      Assign :(destination) (source)
+        Id: z
+        Call, name: gcd, with arguments below
+          Id: x
+          Id: y
+      Call, name: output, with arguments below
+        Id: z

@@ -1,0 +1,33 @@
+int x;
+int a[5];
+
+
+void funcA(void) {
+	int a;
+	a = input();
+	output(a);
+	return a;
+}
+
+ 
+void funcB(int a) {
+	int x[4];
+	output(funcA(a,x));
+	x = a;
+}
+
+
+int funcC(int a, int b[]) {
+	b = 2;
+	a = funcB(a);
+	funcB(b);
+	return b;
+}
+
+
+int funcD(int a, int b, int c[]) {
+	funcB(a,b);
+	funcA(a);
+	funcB(funcD(a,c));
+	return a;
+}

@@ -1,0 +1,88 @@
+
+TINY COMPILATION: test.cm
+   1: /* A program to perform Euclid's
+   2:   Algorithm to computer gcd */
+   3:   
+   4: int gcd(int u, int v)
+	4: ID, name= /*int
+	4: ID, name= gcd
+	4: (
+	4: reserved word: int
+	4: ID, name= u
+	4: ,
+	4: reserved word: int
+	4: ID, name= v
+	4: )
+   5: {
+	5: {
+   6: 	if (v==0) return u;
+	6: reserved word: if
+	6: (
+	6: ID, name= v
+	6: ==
+	6: NUM, val= 0
+	6: )
+	6: reserved word: return
+	6: ID, name= u
+	6: ;
+   7: 	else return gcd(v,u-u/v*v);
+	7: reserved word: else
+	7: reserved word: return
+	7: ID, name= gcd
+	7: (
+	7: ID, name= v
+	7: ,
+	7: ID, name= u
+	7: -
+	7: ID, name= u
+	7: /
+	7: ID, name= v
+	7: *
+	7: ID, name= v
+	7: )
+	7: ;
+   8: 	/*u-u/v*v == u mod v*/
+   9: }
+	9: }
+  10: 
+  11: void main(void)
+	11: reserved word: void
+	11: ID, name= main
+	11: (
+	11: reserved word: void
+	11: )
+  12: {
+	12: {
+  13: 	int x; int y;
+	13: reserved word: int
+	13: ID, name= x
+	13: ;
+	13: reserved word: int
+	13: ID, name= y
+	13: ;
+  14: 	x = input(); y = input();
+	14: ID, name= x
+	14: =
+	14: ID, name= input
+	14: (
+	14: )
+	14: ;
+	14: ID, name= y
+	14: =
+	14: ID, name= input
+	14: (
+	14: )
+	14: ;
+  15: 	output(gcd(x,y));
+	15: ID, name= output
+	15: (
+	15: ID, name= gcd
+	15: (
+	15: ID, name= x
+	15: ,
+	15: ID, name= y
+	15: )
+	15: )
+	15: ;
+  16: }	16: }
+	17: EOF

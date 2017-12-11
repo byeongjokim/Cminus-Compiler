@@ -1,0 +1,133 @@
+
+CMINUS COMPILATION: test2.cm
+
+Syntax tree:
+  Var declaration, name: x, type: int[], size: 10
+  Function declaration, name: minloc, return type: int
+    array Param, name: a, type: int[] , size: 0
+    single Parameter, name: low, type: int
+    single Parameter, name: high, type: int
+    Compound statement :
+      Var declaration, name: i, type: int
+      Var declaration, name: x, type: int
+      Var declaration, name: k, type: int
+      Assign :(destination) (source)
+        Id: k
+        Id: low
+      Assign :(destination) (source)
+        Id: x
+        Id: a
+          Array : [low]
+      Assign :(destination) (source)
+        Id: i
+        Op: +
+          Id: low
+          Const: 1
+      While
+        Op: <
+          Id: i
+          Id: high
+        Compound statement :
+          If (condition) (body)
+            Op: <
+              Id: a
+                Array : [i]
+              Id: x
+            Compound statement :
+              Assign :(destination) (source)
+                Id: x
+                Id: a
+                  Array : [i]
+              Assign :(destination) (source)
+                Id: k
+                Id: i
+          Assign :(destination) (source)
+            Id: i
+            Op: +
+              Id: i
+              Const: 1
+      Return
+        Id: k
+  Function declaration, name: sort, return type: void
+    array Param, name: a, type: int[] , size: 0
+    single Parameter, name: low, type: int
+    single Parameter, name: high, type: int
+    Compound statement :
+      Var declaration, name: i, type: int
+      Var declaration, name: k, type: int
+      Assign :(destination) (source)
+        Id: i
+        Id: low
+      While
+        Op: <
+          Id: i
+          Op: -
+            Id: high
+            Const: 1
+        Compound statement :
+          Var declaration, name: t, type: int
+          Assign :(destination) (source)
+            Id: k
+            Call, name: minloc, with arguments below
+              Id: a
+              Id: i
+              Id: high
+          Assign :(destination) (source)
+            Id: t
+            Id: a
+              Array : [k]
+          Assign :(destination) (source)
+            Id: a
+              Array : [k]
+            Id: a
+              Array : [i]
+          Assign :(destination) (source)
+            Id: a
+              Array : [i]
+            Id: t
+          Assign :(destination) (source)
+            Id: i
+            Op: +
+              Id: i
+              Const: 1
+  Function declaration, name: main, return type: void
+    single Parameter, name: (null), type: void
+    Compound statement :
+      Var declaration, name: i, type: int
+      Assign :(destination) (source)
+        Id: i
+        Const: 0
+      While
+        Op: <
+          Id: i
+          Const: 10
+        Compound statement :
+          Assign :(destination) (source)
+            Id: x
+              Array : [i]
+            Call, name: input, with arguments below
+          Assign :(destination) (source)
+            Id: i
+            Op: +
+              Id: i
+              Const: 1
+      Call, name: sort, with arguments below
+        Id: x
+        Const: 0
+        Const: 10
+      Assign :(destination) (source)
+        Id: i
+        Const: 0
+      While
+        Op: <
+          Id: i
+          Const: 10
+        Compound statement :
+          Call, name: output, with arguments below
+            Id: x
+              Array : [i]
+          Assign :(destination) (source)
+            Id: i
+            Op: +
+              Id: i
+              Const: 1
