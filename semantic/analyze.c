@@ -17,6 +17,7 @@ ScopeList global;
 static char a[] = "Global";
 static char * funcName = a;
 
+static int flag = 0;
 static int stay = 0;
 
 /* counter for variable memory locations */
@@ -75,18 +76,33 @@ static void insertNode( TreeNode * t)
     case StmtK:
       switch(t->kind.stmt){
         case IfK:
-          //funcName = strcat(funcName, ".if");
+          if(t->child[2])
+            flag = 1;
+          funcName = ".if";
+
           break;
 
         case WhileK:
-          //funcName = strcat(funcName, ".WHILE");
+          flag = 3;
           break;
 
         case CompK:
           
           if(stay == 1){
             stay = 0;
+            flag = 0;
           }else{
+            if(flag == 1){
+              flag = 2;
+            }
+            else if(flag == 2){
+              funcName = ".else";
+              flag = 0;
+            }
+            else if(flag == 3){
+              funcName = ".while";
+              flag = 0;
+            }
             scope_push(scope_create(funcName));
           }
           t->scope = scope_top();

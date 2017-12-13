@@ -379,8 +379,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 33
-#define YY_END_OF_BUFFER 34
+#define YY_NUM_RULES 32
+#define YY_END_OF_BUFFER 33
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -390,7 +390,7 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[60] =
     {   0,
-        0,    0,   34,   32,   30,   29,   32,   14,   15,   24,
+        0,    0,   33,   32,   30,   29,   32,   14,   15,   24,
        22,   21,   23,   25,   27,   20,   10,    7,   12,   28,
        28,   16,   17,   28,   28,   28,   28,   28,   18,   19,
        30,    9,   31,   27,   11,    8,   13,   28,   28,   28,
@@ -965,15 +965,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 68 "cminus.l"
-{return ERROR;}
-	YY_BREAK
-case 33:
-YY_RULE_SETUP
-#line 70 "cminus.l"
+#line 69 "cminus.l"
 ECHO;
 	YY_BREAK
-#line 977 "lex.yy.c"
+#line 972 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1974,7 +1969,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 70 "cminus.l"
+#line 69 "cminus.l"
 
 
 
