@@ -1,7 +1,7 @@
 # C-minus Compiler
 The code may be complicated.. There were some trial and error for programming.
 
-Structure
+## Structure
 
  * scanner (only scanner)
  * parser (parser + scanner)
@@ -9,13 +9,13 @@ Structure
  * assignment
  * report
 
-Using
+## Using
 
 * Flex (scanner)
 * Yacc (parser)
 * gcc
 
-How to run
+## How to run
 
 ```
 cd semantic
