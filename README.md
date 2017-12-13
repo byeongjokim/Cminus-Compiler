@@ -1,4 +1,5 @@
 # C-minus Compiler
+The code may be complicated.. There were some trial and error for programming.
 
 Structure
 
