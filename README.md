@@ -12,7 +12,7 @@ Using
 
 * Flex (scanner)
 * Yacc (parser)
-* gcc (semantic)
+* gcc
 
 How to run
 
