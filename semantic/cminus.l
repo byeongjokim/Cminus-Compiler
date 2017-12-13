@@ -65,6 +65,7 @@ whitespace  [ \t]+
                     prev = c;
                   } while (1);
                 }
+.               {return ERROR;}
 
 %%
 
